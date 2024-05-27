@@ -1,0 +1,13 @@
+<launch>
+  <!-- Video Publisher Node -->
+  <node name="video_publisher" pkg="my_pkg" type="video_publisher.py" output="screen">
+  </node>
+
+  <!-- YOLOv8 Node -->
+  <node name="yolov8_node" pkg="my_pkg" type="yolov8_node.py" output="screen">
+  </node>
+
+   <!-- Detection3D Node -->
+  <node name="detection_3d_node" pkg="my_pkg" type="detection_3d_node.py" output="screen">
+  </node>
+</launch>
