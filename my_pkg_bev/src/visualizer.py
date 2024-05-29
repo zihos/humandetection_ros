@@ -2,8 +2,8 @@
 import rospy 
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from my_pkg.msg import VisBoundingBox3D
-from my_pkg.msg import VisBoundingBox3DArray
+from my_pkg_bev.msg import VisBoundingBox3D
+from my_pkg_bev.msg import VisBoundingBox3DArray
 from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point
 from std_msgs.msg import Header

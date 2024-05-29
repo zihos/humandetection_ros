@@ -15,13 +15,13 @@ from ultralytics.engine.results import Keypoints
 from torch import cuda
 
 from sensor_msgs.msg import Image
-from my_pkg.msg import Point2D
-from my_pkg.msg import BoundingBox2D
-from my_pkg.msg import Mask
-from my_pkg.msg import KeyPoint2D
-from my_pkg.msg import KeyPoint2DArray
-from my_pkg.msg import Detection
-from my_pkg.msg import DetectionArray
+from my_pkg_bev.msg import Point2D
+from my_pkg_bev.msg import BoundingBox2D
+from my_pkg_bev.msg import Mask
+from my_pkg_bev.msg import KeyPoint2D
+from my_pkg_bev.msg import KeyPoint2DArray
+from my_pkg_bev.msg import Detection
+from my_pkg_bev.msg import DetectionArray
 from std_srvs.srv import SetBool, SetBoolResponse
 
 class Yolov8Node:

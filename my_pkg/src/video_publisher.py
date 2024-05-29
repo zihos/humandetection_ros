@@ -10,7 +10,7 @@ class VideoPublisher:
         rospy.init_node('video_publisher', anonymous=True)
         self.publisher = rospy.Publisher('/camera/rgb/image_raw', Image, queue_size=10)
         self.cv_bridge = CvBridge()
-        self.video = cv2.VideoCapture('/home/public/zio/catkin_ws/src/my_pkg/data/pedestrian.mp4')
+        self.video = cv2.VideoCapture('/home/zio/catkin_ws/src/my_pkg/data/pedestrian.mp4')
         self.timer = rospy.Timer(rospy.Duration(1.0 / 5), self.timer_callback)  # 30 FPS
 
     def timer_callback(self, event):
