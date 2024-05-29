@@ -1,0 +1,21 @@
+<launch>
+  <!-- Video Publisher Node -->
+  <node name="video_publisher" pkg="my_pkg" type="video_publisher.py" output="screen">
+  </node>
+
+  <!-- YOLOv8 Node -->
+  <node name="yolov8_node" pkg="my_pkg" type="yolov8_node.py" output="screen">
+  </node>
+
+  <!--detection 3D Node -->
+  <node name="detection_3d_node" pkg="my_pkg" type="detection_3d_node.py" output="screen">
+  </node>
+  
+  <!-- visualizer Node -->
+  <node name="visualizer" pkg="my_pkg" type="visualizer.py" output="screen">
+  </node>
+
+  <!--transform Node -->
+  <node name='tf_broadcaster' pkg="my_pkg" type="tf_broadcaster.py" output="screen"> 
+  </node>
+</launch>
