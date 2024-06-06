@@ -1,0 +1,27 @@
+<launch>
+  <arg name="real_time" default="True"/>
+  <arg name="is_bev_plot" default="True"/>
+  <arg name="is_img_w_3d" default="False"/>
+  <arg name="is_marker" default="False"/>
+
+  <!-- Video Publisher Node -->
+  <node name="video_publisher" pkg="my_pkg" type="video_publisher.py" output="screen">
+  </node>
+
+  <!-- YOLOv8 Node -->
+  <node name="yolov8_node" pkg="my_pkg" type="yolov8_node.py" output="screen" args="--real_time $(arg real_time)">
+  </node>
+
+  <!--detection 3D Node -->
+  <node name="detection_3d_node" pkg="my_pkg" type="detection_3d_node.py" output="screen" args="--real_time $(arg real_time)">
+  </node>
+  
+  <!-- visualizer Node -->
+  <node name="new_visualizer" pkg="my_pkg" type="new_visualizer.py" output="screen" args="--real_time $(arg real_time) --is_bev_plot $(arg is_bev_plot) --is_img_w_3d $(arg is_bev_plot) --is_marker $(arg is_marker)">
+  </node>
+
+
+  <!--transform Node -->
+  <node name='tf_broadcaster' pkg="my_pkg" type="tf_broadcaster.py" output="screen"> 
+  </node>
+</launch>
