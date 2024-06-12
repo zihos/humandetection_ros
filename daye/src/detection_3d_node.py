@@ -22,19 +22,19 @@ from tensorflow.keras.layers import *
 
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int32
-from my_pkg.msg import Point2D
-from my_pkg.msg import BoundingBox2D
-from my_pkg.msg import VisBoundingBox3D
-from my_pkg.msg import VisBoundingBox3DArray
-# from my_pkg.msg import BoundingBox3D
+from daye.msg import Point2D
+from daye.msg import BoundingBox2D
+from daye.msg import VisBoundingBox3D
+from daye.msg import VisBoundingBox3DArray
+# from daye.msg import BoundingBox3D
 # from vision_msgs.msg import BoundingBox3D
 # from geometry_msgs.msg import Pose, Vector3
 
-from my_pkg.msg import Mask
-from my_pkg.msg import KeyPoint2D
-from my_pkg.msg import KeyPoint2DArray
-from my_pkg.msg import Detection
-from my_pkg.msg import DetectionArray
+from daye.msg import Mask
+from daye.msg import KeyPoint2D
+from daye.msg import KeyPoint2DArray
+from daye.msg import Detection
+from daye.msg import DetectionArray
 from std_srvs.srv import SetBool, SetBoolResponse
 
 import message_filters 
@@ -281,7 +281,7 @@ def calc_location(dimension, proj_matrix, box_2d, alpha, theta_ray):
 #         rospy.init_node('detection_3d_node', anonymous=True)
         
 #         rospack = rospkg.RosPack()
-#         package_path = rospack.get_path('my_pkg')
+#         package_path = rospack.get_path('daye')
 #         self.model_path = os.path.join(package_path, 'model', 'mobilenetv2_weights.h5')
 #         self.device = rospy.get_param('~device', 'cpu')
 #         self.threshold = rospy.get_param('~threshold', 0.5)
@@ -441,7 +441,7 @@ class Detection3DNode:
         # self.tf_listener = tf.TransformListener()        
         
         rospack = rospkg.RosPack()
-        package_path = rospack.get_path('my_pkg')
+        package_path = rospack.get_path('daye')
 
         self.model_path = os.path.join(package_path, 'model', 'mobilenetv2_weights.h5')
         self.device = rospy.get_param('~device', 'cpu')
