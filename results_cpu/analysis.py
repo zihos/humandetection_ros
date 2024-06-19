@@ -14,7 +14,7 @@ def calculate_statistics_from_csv(file_path, column_name):
     return mean_value, std_dev
 
 # 예제 파일 경로와 컬럼 이름
-file_path = '/home/zio/humandetection_ros/results/mpstat_output_camera.csv'
+file_path = '/home/zio/humandetection_ros/results/mpstat_output_openvinoyolov8.csv'
 column_name = 'usr usage'
 
 # 함수 호출
@@ -22,3 +22,4 @@ mean_value, std_dev = calculate_statistics_from_csv(file_path, column_name)
 
 print(f"Mean of {column_name}: {mean_value:.2f}")
 print(f"Standard Deviation of {column_name}: {std_dev:.2f}")
+print(f"{mean_value:.2f}\u00B1{std_dev:.2f}")
